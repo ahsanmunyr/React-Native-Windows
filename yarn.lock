@@ -2195,19 +2195,27 @@
     react-is "^16.13.0"
     use-latest-callback "^0.1.7"
 
-"@react-navigation/drawer@^6.6.6":
-  version "6.6.6"
-  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-6.6.6.tgz#6a48e5ea2bf70dc6dfbe17e7e48b5a532d8886dc"
-  integrity sha512-DW/oNRisSOGOqvZfCzfhKBxnzT97Teqtg1Gal85g+K3gnVbM1jOBE2PdnYsKU0fULfFtDwvp/QZSbcgjDpr12A==
+"@react-navigation/drawer@^7.0.0-alpha.0":
+  version "7.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-7.0.0-alpha.7.tgz#8a5c69277b86585be4bbb49ed7dd23a5497496bd"
+  integrity sha512-i0Asfz9ig15w+1uTiWkY3F1e4aOe9JjhKtUfmvE87XQ/udc27WfqsAhULXt/5UeM+s9ZbELwB1QTP0RM5c3ZXQ==
   dependencies:
-    "@react-navigation/elements" "^1.3.21"
+    "@react-navigation/elements" "^2.0.0-alpha.4"
     color "^4.2.3"
-    warn-once "^0.1.0"
+    react-native-drawer-layout "^4.0.0-alpha.3"
+    use-latest-callback "^0.1.9"
 
 "@react-navigation/elements@^1.3.21":
   version "1.3.21"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.3.21.tgz#debac6becc6b6692da09ec30e705e476a780dfe1"
   integrity sha512-eyS2C6McNR8ihUoYfc166O1D8VYVh9KIl0UQPI8/ZJVsStlfSTgeEEh+WXge6+7SFPnZ4ewzEJdSAHH+jzcEfg==
+
+"@react-navigation/elements@^2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.0.0-alpha.4.tgz#c70750facb7400bb10e171573e562bf77cc93fa7"
+  integrity sha512-pVIrNivKHOsqusRQ9G0l9mpaSmm7FLJ55C+n6AVZQzbqMlJRIPAs7HCH3mJxYh6xU3dzOa0TR/++XEMd13UXQQ==
+  dependencies:
+    color "^4.2.3"
 
 "@react-navigation/material-bottom-tabs@^6.2.19":
   version "6.2.19"
@@ -2382,9 +2390,9 @@
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
 "@types/node@*":
-  version "20.10.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.0.tgz#16ddf9c0a72b832ec4fcce35b8249cf149214617"
-  integrity sha512-D0WfRmU9TQ8I9PFx9Yc+EBHw+vSpIub4IDvQivcp26PtPrdMGAq5SDcpXEo/epqa/DXotVpekHiLNTg3iaKXBQ==
+  version "20.10.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.1.tgz#d2c96f356c3125fedc983d74c424910c3767141c"
+  integrity sha512-T2qwhjWwGH81vUEx4EXmBKsTJRXFXNZTL4v0gi01+zyBmCwzE6TyHszqX01m+QHTEq+EZNo13NeJIdEqf+Myrg==
   dependencies:
     undici-types "~5.26.4"
 
@@ -3571,9 +3579,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.535:
-  version "1.4.596"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.596.tgz#6752d1aa795d942d49dfc5d3764d6ea283fab1d7"
-  integrity sha512-zW3zbZ40Icb2BCWjm47nxwcFGYlIgdXkAx85XDO7cyky9J4QQfq8t0W19/TLZqq3JPQXtlv8BPIGmfa9Jb4scg==
+  version "1.4.597"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.597.tgz#9848b9aa52749bf35be88013bab52be232889d94"
+  integrity sha512-0XOQNqHhg2YgRVRUrS4M4vWjFCFIP2ETXcXe/0KIQBjXE9Cpy+tgzzYfuq6HGai3hWq0YywtG+5XK8fyG08EjA==
 
 emitter-listener@^1.0.1, emitter-listener@^1.1.1:
   version "1.1.2"
@@ -4138,9 +4146,9 @@ flow-enums-runtime@^0.0.5:
   integrity sha512-PSZF9ZuaZD03sT9YaIs0FrGJ7lSUw7rHZIex+73UYVXg46eL/wxN5PaVcPJFudE2cJu5f0fezitV5aBkLHPUOQ==
 
 flow-parser@0.*:
-  version "0.222.0"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.222.0.tgz#88decc0e35bc11c011af66dbc2f669589d69a6b2"
-  integrity sha512-Fq5OkFlFRSMV2EOZW+4qUYMTE0uj8pcLsYJMxXYriSBDpHAF7Ofx3PibCTy3cs5P6vbsry7eYj7Z7xFD49GIOQ==
+  version "0.223.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.223.0.tgz#11cf53ff95e40aa5679e1da84831ec65812c50ef"
+  integrity sha512-POG49J/UuvwI43iP7XzW1EBQzJtkAVT1/HUwbMVtEhNK+AvymSQwBRX6khUhgzbFgfyrWgVYHhheqe1xTruBLg==
 
 flow-parser@^0.206.0:
   version "0.206.0"
@@ -6520,6 +6528,13 @@ react-native-animatable@^1.4.0:
   dependencies:
     prop-types "^15.8.1"
 
+react-native-drawer-layout@^4.0.0-alpha.3:
+  version "4.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-4.0.0-alpha.3.tgz#0adf51e816f2ce094d415fe33d9f43c1e6df6ae2"
+  integrity sha512-BRlX8l2gDD41fs8RfaemjDBDV0PPspDMvej/3b9QWfp+JQ/H8tkSdWBtUBbSBzYdqyqy2bHV4epOCMb4t+0B0g==
+  dependencies:
+    use-latest-callback "^0.1.9"
+
 react-native-flash-message@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/react-native-flash-message/-/react-native-flash-message-0.4.2.tgz#ed8ffe60c532bc1274c3b49a60dd0bd2fca59c50"
@@ -6550,9 +6565,9 @@ react-native-iphone-screen-helper@^2.0.2:
   integrity sha512-geuw/bli83+tOg8UpoioLk1H1aEy0wnMDusWkCazsyH6fSk6qzmgaZ2cRyyJRU8s2tG87HctZFKGTkyYzcUcfA==
 
 react-native-pager-view@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.2.2.tgz#4c1c45d5f3f622c0922ef96ac114666392ebf5ec"
-  integrity sha512-MLkJB7iP6v0Hd4/B4/R/gLCSE+YBtjxG/vHZYBDU+fI3U7HBYgKAg4o6ad8HxbKVcWWyRDNeeVRGISw1MUjlHw==
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.2.3.tgz#698f6387fdf06cecc3d8d4792604419cb89cb775"
+  integrity sha512-dqVpXWFtPNfD3D2QQQr8BP+ullS5MhjRJuF8Z/qml4QTILcrWaW8F5iAxKkQR3Jl0ikcEryG/+SQlNcwlo0Ggg==
 
 react-native-paper@^5.11.3:
   version "5.11.3"
@@ -6608,6 +6623,11 @@ react-native-vector-icons@^10.0.2:
   dependencies:
     prop-types "^15.7.2"
     yargs "^16.1.1"
+
+react-native-windows-hello@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-windows-hello/-/react-native-windows-hello-1.1.0.tgz#91e7a8c7ca07554b380e887549df2e828b73eae8"
+  integrity sha512-XPPYLEPG3ffwida934ZHvGwqOE3AhshbvMPxl2/GKXS6QyX4XvcTMM4uVAFU6LyT2W7h2aVBkSqaxjFVBOACww==
 
 react-native-windows@0.72.20:
   version "0.72.20"
@@ -7650,7 +7670,7 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-latest-callback@^0.1.5, use-latest-callback@^0.1.7:
+use-latest-callback@^0.1.5, use-latest-callback@^0.1.7, use-latest-callback@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/use-latest-callback/-/use-latest-callback-0.1.9.tgz#10191dc54257e65a8e52322127643a8940271e2a"
   integrity sha512-CL/29uS74AwreI/f2oz2hLTW7ZqVeV5+gxFeGudzQrgkCytrHw33G4KbnQOrRlAEzzAFXi7dDLMC9zhWcVpzmw==

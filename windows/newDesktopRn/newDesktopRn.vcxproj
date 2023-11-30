@@ -6,7 +6,7 @@
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{7ecbe1bf-a381-4aa6-a841-75c5a6cb2d51}</ProjectGuid>
+    <ProjectGuid>{7bc27602-acc2-4436-9ee1-61ce2e1032dd}</ProjectGuid>
     <ProjectName>newDesktopRn</ProjectName>
     <RootNamespace>newDesktopRn</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>

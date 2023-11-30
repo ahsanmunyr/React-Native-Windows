@@ -1,4 +1,4 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import React, {memo, useEffect} from 'react';
 import { screenNavigation } from '../../helper/helper';
 import {AppSplashImage} from '../../constant/images';
