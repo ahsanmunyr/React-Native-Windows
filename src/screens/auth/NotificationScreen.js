@@ -1,7 +1,7 @@
-import {View, Text, useWindowDimensions} from 'react-native';
+import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 import React, {memo} from 'react';
 
-const HomeScreen = ({TabBarWidth}) => {
+const NotificationScreen = ({TabBarWidth}) => {
   const {width, height} = useWindowDimensions();
   return (
     <View
@@ -10,9 +10,11 @@ const HomeScreen = ({TabBarWidth}) => {
         width: width - TabBarWidth,
         alignSelf: 'flex-end',
       }}>
-      <Text>HomeScreen</Text>
+      <Text>NotificationScreen</Text>
     </View>
   );
 };
 
-export default memo(HomeScreen);
+export default memo(NotificationScreen);
+
+const styles = StyleSheet.create({});

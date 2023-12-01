@@ -9,7 +9,10 @@ using namespace winrt;
 using namespace xaml;
 using namespace xaml::Controls;
 using namespace xaml::Navigation;
-
+using namespace winrt::newDesktopRn;
+using namespace winrt::newDesktopRn::implementation;
+using namespace winrt::Windows::UI::ViewManagement;
+using namespace winrt::Windows::Foundation;
 using namespace Windows::ApplicationModel;
 namespace winrt::newDesktopRn::implementation
 {
@@ -41,6 +44,7 @@ App::App() noexcept
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
+
 }
 
 /// <summary>
@@ -51,6 +55,10 @@ App::App() noexcept
 void App::OnLaunched(activation::LaunchActivatedEventArgs const& e)
 {
     super::OnLaunched(e);
+    auto appView = ApplicationView::GetForCurrentView();
+    appView.SetPreferredMinSize(Size(1000, 1000));
+    ApplicationView::PreferredLaunchViewSize(Size(1000, 1000));
+    ApplicationView::PreferredLaunchWindowingMode(ApplicationViewWindowingMode::PreferredLaunchViewSize);
 
     Frame rootFrame = Window::Current().Content().as<Frame>();
     rootFrame.Navigate(xaml_typename<MainPage>(), box_value(e.Arguments()));

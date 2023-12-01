@@ -10,4 +10,5 @@ export const homeWidgetDiscountImage = {uri: "https://www.searchenginejournal.co
 export const homeWidgetNetSaleImage = {uri: "https://snov.io/blog/wp-content/uploads/2021/08/Webp.net-resizeimage3.png"}
 export const AppSplashImage = require('../assets/images/AppSplash.png')
 export const Revaki_logo = require('../assets/images/Revaki_logo.png')
+export const Avatar = require('../assets/images/avatar.jpg')
 // https://snov.io/blog/wp-content/uploads/2021/08/Webp.net-resizeimage3.png
