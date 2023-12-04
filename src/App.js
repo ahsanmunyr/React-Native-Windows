@@ -12,7 +12,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme, Text} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme, Text, ImageBackground} from 'react-native';
 // import AnimTab1 from './bottomTab/AnimTab1';
 // import AnimTab2 from './bottomTab/AnimTab2';
 // import AnimTab3 from './bottomTab/AnimTab3';
@@ -27,6 +27,7 @@ import {Provider} from 'react-native-paper';
 // import ProductsList from './screens/shop/ProductsList';
 // import DetailsScreen from './screens/shop/DetailsScreen';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import { AppSplashImage } from './constant/images';
 // import Fab from './screens/fab/Fab';
 // import DrawerNav1 from './screens/drawer/drawer1/DrawerNav1';
 
@@ -42,6 +43,14 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.black : Colors.white,
   };
 
+  const Theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: 'transparent',
+    },
+  };
+  
   return (
     <Provider>
       <SafeAreaView style={backgroundStyle}>
@@ -49,7 +58,7 @@ const App = () => {
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={Colors.white}
         />
-        <NavigationContainer>
+        <NavigationContainer theme={Theme}>
           <RootStack />
         </NavigationContainer>
       </SafeAreaView>
@@ -91,6 +100,7 @@ const RootStack = () => {
       <Stack.Screen name="Fab" component={Fab} />
       <Stack.Screen name="Drawer1" component={DrawerNav1} /> */}
     </Stack.Navigator>
+  
   );
 };
 

@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="74cdc988-4f5d-48a8-ae0f-cc599f5e12f9"
+    Name="a0a59417-d17c-42c4-b408-f2cce5b8f0f5"
     Publisher="CN=Home"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="74cdc988-4f5d-48a8-ae0f-cc599f5e12f9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="a0a59417-d17c-42c4-b408-f2cce5b8f0f5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>newDesktopRn</DisplayName>
@@ -40,8 +40,6 @@
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
-        <uap:InitialRotationPreference>
-          <uap:Rotation Preference='landscape'/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

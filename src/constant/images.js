@@ -11,4 +11,5 @@ export const homeWidgetNetSaleImage = {uri: "https://snov.io/blog/wp-content/upl
 export const AppSplashImage = require('../assets/images/AppSplash.png')
 export const Revaki_logo = require('../assets/images/Revaki_logo.png')
 export const Avatar = require('../assets/images/avatar.jpg')
+export const BackgroundImage = require('../assets/bg.png')
 // https://snov.io/blog/wp-content/uploads/2021/08/Webp.net-resizeimage3.png

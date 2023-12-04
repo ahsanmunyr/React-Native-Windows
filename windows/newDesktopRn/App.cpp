@@ -14,6 +14,7 @@ using namespace winrt::newDesktopRn::implementation;
 using namespace winrt::Windows::UI::ViewManagement;
 using namespace winrt::Windows::Foundation;
 using namespace Windows::ApplicationModel;
+
 namespace winrt::newDesktopRn::implementation
 {
 /// <summary>
@@ -44,7 +45,6 @@ App::App() noexcept
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
-
 }
 
 /// <summary>
@@ -63,6 +63,7 @@ void App::OnLaunched(activation::LaunchActivatedEventArgs const& e)
     Frame rootFrame = Window::Current().Content().as<Frame>();
     rootFrame.Navigate(xaml_typename<MainPage>(), box_value(e.Arguments()));
 }
+
 
 /// <summary>
 /// Invoked when the application is activated by some means other than normal launching.

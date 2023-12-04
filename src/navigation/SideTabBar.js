@@ -10,13 +10,15 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
-import React, {memo} from 'react';
-import {Avatar} from '../constant/images';
+import React, {memo, useState} from 'react';
+import {Avatar, BackgroundImage} from '../constant/images';
 import {
   responsiveFontSize,
   useResponsiveHeight,
   useResponsiveWidth,
 } from 'react-native-responsive-dimensions';
+// import { AppSplashImage } from './constant/images';
+import {connect} from 'react-redux';
 import {
   BOTTOMSHEET_BUTTON,
   CANCEL_INDEX,
@@ -30,8 +32,12 @@ import {tab_icon, tab_icon_focus} from '../constant/icon';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {COLORS, commonStyles} from '../constant/theme';
+import {ImageBackground} from 'react-native-windows';
 
-var TabBarWidth = 200;
+function DrawableBtn() {
+  return null;
+}
+
 const {
   HomeScreen,
   DashboardScreen,
@@ -40,7 +46,7 @@ const {
   ProfileScreen,
 } = AuthScreen;
 
-function ProfileContainer() {
+function ProfileContainer({TabBarWidth}) {
   return (
     <View style={[styles.profileTab, {width: TabBarWidth}]}>
       <Image source={Avatar} style={styles.profileImage} />
@@ -55,33 +61,36 @@ function ProfileContainer() {
   );
 }
 
-function renderIcon(label, isFocused) {
+function renderIcon(label, isFocused, TabBarWidth) {
   function IconSource({forcusIcon, unForcusIcon, isFocusedBool}) {
     return (
       <View
         style={[
           styles.iconView,
-          {backgroundColor: isFocusedBool ? COLORS.primary : 'white'},
+          {
+            backgroundColor: isFocusedBool ? COLORS.primary : '#fafafa',
+            width: TabBarWidth,
+          },
         ]}>
         <Image
           style={styles.iconImage}
           source={isFocusedBool ? forcusIcon : unForcusIcon}
         />
-        <Text
-          style={{
-            fontSize: isFocused ? 13 : 11,
-            width: 100,
-            color: isFocusedBool ? 'white' : 'black',
-            fontWeight: isFocusedBool ? '600' : '300',
-          }}>
-          {label}
-        </Text>
+        {TabBarWidth == 200 && (
+          <Text
+            style={{
+              fontSize: isFocused ? 13 : 11,
+              width: 100,
+              color: isFocusedBool ? 'white' : 'black',
+              fontWeight: isFocusedBool ? '600' : '300',
+            }}>
+            {label}
+          </Text>
+        )}
       </View>
     );
   }
   switch (label) {
-    case 'Profile':
-      return <ProfileContainer />;
     case 'Dashboard':
       return (
         <IconSource
@@ -90,6 +99,9 @@ function renderIcon(label, isFocused) {
           isFocusedBool={isFocused}
         />
       );
+
+    // case 'Profile':
+    //   return <ProfileContainer TabBarWidth={TabBarWidth} />;
     case 'Home':
       return (
         <IconSource
@@ -119,12 +131,11 @@ function renderIcon(label, isFocused) {
   }
 }
 
-function MyTabBar({state, descriptors, navigation}) {
+function MyTabBar({state, descriptors, navigation, TabBarWidth}) {
   return (
-    <View style={styles.bar}>
+    <View style={[styles.bar, {width: TabBarWidth}]}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
-
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
@@ -163,7 +174,7 @@ function MyTabBar({state, descriptors, navigation}) {
             onPress={onPress}
             onLongPress={onLongPress}
             style={styles.tabBtn}>
-            {renderIcon(label, isFocused)}
+            {renderIcon(label, isFocused, TabBarWidth)}
           </TouchableOpacity>
         );
       })}
@@ -173,13 +184,16 @@ function MyTabBar({state, descriptors, navigation}) {
 
 const Tab = createBottomTabNavigator();
 
-function SideTabBar() {
+function SideTabBar({drawableWidthRed}) {
+  // const [TabBarWidth, onChangeTabBarWidth] = useState(200);
+  // console.log(drawableWidthRed.width, '========');
+  var TabBarWidth = drawableWidthRed.width;
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
       }}
-      tabBar={props => <MyTabBar {...props} />}>
+      tabBar={props => <MyTabBar {...props} TabBarWidth={TabBarWidth} />}>
       <Tab.Screen name="Profile">
         {props => <ProfileScreen TabBarWidth={TabBarWidth} {...props} />}
       </Tab.Screen>
@@ -199,7 +213,14 @@ function SideTabBar() {
   );
 }
 
-export default memo(SideTabBar);
+function mapStateToProps({drawableWidthRed}) {
+  return {
+    drawableWidthRed,
+  };
+}
+
+export default connect(mapStateToProps, null)(memo(SideTabBar));
+// export default memo(SideTabBar);
 
 const styles = StyleSheet.create({
   profileContent: {
@@ -227,14 +248,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 10,
+    backgroundColor: '#fafafa',
   },
   iconView: {
-    width: 200,
+    // width: 180,
     height: 60,
     // borderRadius: genericRatio(50),
+    backgroundColor: '#fafafa',
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
+    borderRadius: 2,
   },
   iconImage: {
     width: 25,
@@ -244,11 +268,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     // height: '100%',
     height: '100%',
-    backgroundColor: 'white',
-    width: TabBarWidth,
+    backgroundColor: '#fafafa',
     position: 'absolute',
     top: 0,
     left: 0,
+    borderRightWidth: 2,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderBottomWidth: 0,
+    borderColor: '#afa7fa',
+    // opacity: 0.9,
     // height: genericRatio(60),
   },
   tabBtn: {
@@ -256,6 +285,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // width: 80,
     // height: genericRatio(60),
-    backgroundColor: 'white',
+    backgroundColor: '#fafafa',
   },
 });
