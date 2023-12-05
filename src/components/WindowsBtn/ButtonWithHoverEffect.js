@@ -32,7 +32,7 @@ export default ButtonWithHoverEffect;
 const styles = StyleSheet.create({
   textStyle: {
     color: 'white',
-    fontSize: responsiveFontSize(1.3),
+    fontSize: 18,
     fontWeight: '500',
   },
 });

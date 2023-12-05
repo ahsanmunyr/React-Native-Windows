@@ -1,1 +1,4 @@
 export const DRAWABLE_WITH_VALUE="DRAWABLE_WITH_VALUE"
+export const LOGIN_TYPE = "LOGIN_TYPE"
+export const OTP_TYPE = "OTP_TYPE"
+export const LOGOUT_TYPE = "LOGOUT_TYPE"

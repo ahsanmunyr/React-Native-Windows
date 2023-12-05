@@ -45,7 +45,7 @@ const LoginScreen = ({navigation}) => {
 
   const NextFunc = useCallback(()=>{
     
-    screenNavigation(navigation, 'SideTabBar');
+    screenNavigation(navigation, 'OTPScreen');
   })
 
   return (

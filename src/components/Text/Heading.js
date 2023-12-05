@@ -9,5 +9,5 @@ const Heading = ({text}) => {
 export default Heading;
 
 const styles = StyleSheet.create({
-  textStyle: {fontSize: responsiveFontSize(2.5), fontWeight: '600'},
+  textStyle: {fontSize: 28, fontWeight: '700'},
 });

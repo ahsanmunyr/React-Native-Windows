@@ -5,6 +5,8 @@ import DashboardScreen from './auth/DashboardScreen';
 import SettingScreen from './auth/SettingScreen';
 import NotificationScreen from './auth/NotificationScreen';
 import ProfileScreen from './auth/ProfileScreen';
+import OTPScreen from './nonauth/OTPScreen';
+
 export const AuthScreen = {
   HomeScreen,
   DashboardScreen,
@@ -16,4 +18,5 @@ export const AuthScreen = {
 export const NonAuthScreen = {
   LoginScreen,
   WalkthroughScreen,
+  OTPScreen
 };

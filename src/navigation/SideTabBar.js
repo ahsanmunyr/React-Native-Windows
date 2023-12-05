@@ -194,9 +194,9 @@ function SideTabBar({drawableWidthRed}) {
         headerShown: false,
       }}
       tabBar={props => <MyTabBar {...props} TabBarWidth={TabBarWidth} />}>
-      <Tab.Screen name="Profile">
+      {/* <Tab.Screen name="Profile">
         {props => <ProfileScreen TabBarWidth={TabBarWidth} {...props} />}
-      </Tab.Screen>
+      </Tab.Screen> */}
       <Tab.Screen name="Dashboard">
         {props => <DashboardScreen TabBarWidth={TabBarWidth} {...props} />}
       </Tab.Screen>

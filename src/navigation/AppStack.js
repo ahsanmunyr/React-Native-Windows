@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -17,8 +17,10 @@ import DashboardScreen from '../screens/auth/DashboardScreen';
 import SideTabBar from './SideTabBar';
 import {AppSplashImage} from '../constant/images';
 import {Provider} from 'react-redux';
+
 import {store} from '../store/index';
-const {WalkthroughScreen, LoginScreen} = NonAuthScreen;
+// import OTPScreen from '../screens/nonauth/OTPScreen';
+const {WalkthroughScreen, LoginScreen, OTPScreen} = NonAuthScreen;
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -42,6 +44,7 @@ const AppStack = () => {
             component={WalkthroughScreen}
           />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen name="OTPScreen" component={OTPScreen} />
           <Stack.Screen name="SideTabBar" component={SideTabBar} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -57,4 +60,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default memo(Main);
