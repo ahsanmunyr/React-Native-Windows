@@ -8,7 +8,7 @@ import {
   Button,
   Pressable,
 } from 'react-native';
-import React, {useState, useMemo, useCallback,memo} from 'react';
+import React, {useState, useMemo, useCallback, memo, useEffect} from 'react';
 import {
   responsiveScreenWidth,
   responsiveScreenHeight,
@@ -20,15 +20,22 @@ import {Revaki_logo} from '../../constant/images';
 import {TextInput, Text} from 'react-native-windows';
 import Heading from '../../components/Text/Heading';
 import ButtonWithHoverEffect from '../../components/WindowsBtn/ButtonWithHoverEffect';
-import { screenNavigation } from '../../helper/helper';
+import {screenNavigation} from '../../helper/helper';
+import {connect} from 'react-redux';
+import * as login from '../../store/actions/loginAct';
+import {ProgressView} from '@react-native-community/progress-view';
+import Loading from '../../components/Loading';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({navigation, login}) => {
+  // console.log(login, "login")
   const [fields, setFields] = useState({
-    email: 'admin@kohicoffees.pk',
-    password: '',
+    email: 'Od_Testing',
+    password: '@rT4441',
     onHover: false,
     NextBtn: false,
+    apiCalling: false,
   });
+
   const onChangeValue = useCallback(
     (mode, text) => {
       setFields(prev => ({...fields, [mode]: text}));
@@ -42,11 +49,21 @@ const LoginScreen = ({navigation}) => {
   const ShowNextBtnEffect = useMemo(() => fields['NextBtn'], [fields]);
   const textValuePassword = useMemo(() => fields['password'], [fields]);
   const textValueEmail = useMemo(() => fields['email'], [fields]);
+  const apiCall = useMemo(() => fields['apiCalling'], [fields]);
 
-  const NextFunc = useCallback(()=>{
-    
-    screenNavigation(navigation, 'OTPScreen');
-  })
+
+  const NextFunc = useCallback(() => {
+    onChangeValue('apiCalling', true);
+    login(textValueEmail, textValuePassword).then(res => {
+      const {Status, Message} = res;
+      if (Status) {
+        screenNavigation(navigation, 'OTPScreen')
+      } else {
+        console.error(Message);
+      }
+      onChangeValue('apiCalling', false);
+    });
+  });
 
   return (
     <View style={styles.main}>
@@ -98,20 +115,26 @@ const LoginScreen = ({navigation}) => {
                 </Text>
               </Text>
             </View>
-            <ButtonWithHoverEffect
-              onPress={NextFunc}
-              onMouseEnter={() => onChangeValue('NextBtn', true)}
-              onMouseLeave={() => onChangeValue('NextBtn', false)}
-              showBtnEffect={ShowNextBtnEffect}
-              btnTitle={'Login'}
-              btnStyle={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'flex-end',
-                height: 40,
-                width: 80,
-              }}
-            />
+
+            {!apiCall ? (
+              <ButtonWithHoverEffect
+                onPress={NextFunc}
+                onMouseEnter={() => onChangeValue('NextBtn', true)}
+                onMouseLeave={() => onChangeValue('NextBtn', false)}
+                showBtnEffect={ShowNextBtnEffect}
+                btnTitle={'Login'}
+                btnStyle={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  alignSelf: 'flex-end',
+                  height: 40,
+                  width: 80,
+                }}
+              />
+            ) : (
+              <Loading />
+            )}
+
             {/* <View
               onMouseEnter={() => onChangeValue('NextBtn', true)}
               onMouseLeave={() => onChangeValue('NextBtn', false)}
@@ -134,13 +157,13 @@ const LoginScreen = ({navigation}) => {
             </View> */}
           </View>
         </View>
-       
       </View>
     </View>
   );
 };
 
-export default memo(LoginScreen);
+export default connect(null, login)(memo(LoginScreen));
+// export default memo(LoginScreen);
 
 const styles = StyleSheet.create({
   main: {

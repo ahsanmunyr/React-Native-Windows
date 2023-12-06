@@ -23,11 +23,16 @@ import ButtonWithHoverEffect from '../../components/WindowsBtn/ButtonWithHoverEf
 import {screenNavigation} from '../../helper/helper';
 import {COLORS} from '../../constant/theme';
 import {OtpInput} from 'react-native-otp-entry';
-
-const OTPScreen = ({navigation}) => {
+import {connect} from 'react-redux';
+import * as loginRed from '../../store/reducer/loginRed';
+import * as otpAct from '../../store/actions/otpAct';
+import Loading from '../../components/Loading';
+const OTPScreen = ({navigation, loginRed, otpAct}) => {
   const [fields, setFields] = useState({
     otp: '',
+    apiCalling: false,
   });
+
 
   const onChangeValue = useCallback(
     (mode, text) => {
@@ -36,16 +41,27 @@ const OTPScreen = ({navigation}) => {
     [fields],
   );
 
-  //   screenNavigation(navigation, 'SideTabBar');
-
   const sendServerCheckOTP = useCallback(code => {
+    onChangeValue('apiCalling', true);
     onChangeValue('otp', code);
+    const {Token} = loginRed?.UserData
     if (code.length === 4) {
-      console.log('done');
-      screenNavigation(navigation, 'SideTabBar');
+      otpAct(code, Token).then(res => {
+        const {Status, Message} = res;
+        if (Status) {
+          screenNavigation(navigation, 'SideTabBar')
+          // console.warn("DONE");
+        } else {
+          console.warn(Message);
+          screenNavigation(navigation, 'LoginScreen')
+        }
+        onChangeValue('apiCalling', false);
+      });
+
     }
   }, []);
 
+  const apiCall = useMemo(() => fields['apiCalling'], [fields]);
   return (
     <View style={styles.main}>
       <View style={styles.innerMain}>
@@ -68,31 +84,26 @@ const OTPScreen = ({navigation}) => {
                 Enter verification code
               </Text>
             </View>
-            <OtpInput
-              numberOfDigits={4}
-              focusColor={COLORS.primary}
-              focusStickBlinkingDuration={500}
-              onTextChange={sendServerCheckOTP}
-              
-              theme={{
-                containerStyle: {
-                  width: 280,
-                  alignSelf:'center'
-                },
-                inputsContainerStyle: {
-                    
-                },
-                pinCodeContainerStyle: {
-                    width: 60
-                }
-                // inputsContainerStyle: styles.inputsContainer,
-                // pinCodeContainerStyle: styles.pinCodeContainer,
-                // pinCodeTextStyle: styles.pinCodeText,
-                // focusStickStyle: styles.focusStick,
-                // focusedPinCodeContainerStyle: styles.activePinCodeContainer
-               }}
-            
-            />
+            {!apiCall ? (
+              <OtpInput
+                numberOfDigits={4}
+                focusColor={COLORS.primary}
+                focusStickBlinkingDuration={500}
+                onTextChange={sendServerCheckOTP}
+                theme={{
+                  containerStyle: {
+                    width: 280,
+                    alignSelf: 'center',
+                  },
+                  inputsContainerStyle: {},
+                  pinCodeContainerStyle: {
+                    width: 60,
+                  },
+                }}
+              />
+            ) : (
+              <Loading />
+            )}
           </View>
         </View>
       </View>
@@ -100,7 +111,14 @@ const OTPScreen = ({navigation}) => {
   );
 };
 
-export default memo(OTPScreen);
+function mapStateToProps({loginRed}) {
+  return {
+    loginRed,
+  };
+}
+
+export default connect(mapStateToProps, otpAct)(memo(OTPScreen));
+// export default memo(OTPScreen);
 
 const styles = StyleSheet.create({
   OTP: {width: '80%', flexDirection: 'row', justifyContent: 'space-between'},

@@ -3,9 +3,14 @@ import ReduxThunk from 'redux-thunk';
 import {persistStore, persistReducer, createTransform} from 'redux-persist';
 import drawableWidthRed from './reducer/drawableWidthRed';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import loginRed from './reducer/loginRed';
+import otpRed from './reducer/otpRed';
+import userDataRed from './reducer/userDataRed';
 const reducers = combineReducers({
   drawableWidthRed,
+  loginRed,
+  otpRed,
+  userDataRed,
 });
 
 const persistConfig = {

@@ -2,7 +2,7 @@ import LoginScreen from './nonauth/LoginScreen';
 import WalkthroughScreen from './nonauth/WalkthroughScreen';
 import HomeScreen from './auth/HomeScreen';
 import DashboardScreen from './auth/DashboardScreen';
-import SettingScreen from './auth/SettingScreen';
+import UsersListScreen from './auth/UsersListScreen';
 import NotificationScreen from './auth/NotificationScreen';
 import ProfileScreen from './auth/ProfileScreen';
 import OTPScreen from './nonauth/OTPScreen';
@@ -10,7 +10,7 @@ import OTPScreen from './nonauth/OTPScreen';
 export const AuthScreen = {
   HomeScreen,
   DashboardScreen,
-  SettingScreen,
+  UsersListScreen,
   NotificationScreen,
   ProfileScreen
 };

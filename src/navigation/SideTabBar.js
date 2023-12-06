@@ -34,14 +34,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {COLORS, commonStyles} from '../constant/theme';
 import {ImageBackground} from 'react-native-windows';
 
-function DrawableBtn() {
-  return null;
-}
 
 const {
   HomeScreen,
   DashboardScreen,
-  SettingScreen,
+  UsersListScreen,
   NotificationScreen,
   ProfileScreen,
 } = AuthScreen;
@@ -110,7 +107,7 @@ function renderIcon(label, isFocused, TabBarWidth) {
           isFocusedBool={isFocused}
         />
       );
-    case 'Settings':
+    case 'Users':
       return (
         <IconSource
           forcusIcon={tab_icon_focus.Profile}
@@ -203,8 +200,8 @@ function SideTabBar({drawableWidthRed}) {
       <Tab.Screen name="Home">
         {props => <HomeScreen TabBarWidth={TabBarWidth} {...props} />}
       </Tab.Screen>
-      <Tab.Screen name="Settings">
-        {props => <SettingScreen TabBarWidth={TabBarWidth} {...props} />}
+      <Tab.Screen name="Users">
+        {props => <UsersListScreen TabBarWidth={TabBarWidth} {...props} />}
       </Tab.Screen>
       <Tab.Screen name="Notifications">
         {props => <NotificationScreen TabBarWidth={TabBarWidth} {...props} />}
