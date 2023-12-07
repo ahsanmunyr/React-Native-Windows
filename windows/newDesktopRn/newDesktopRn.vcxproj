@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- This project was created with react-native-windows 0.72.20 -->
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props')" />
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
@@ -129,9 +130,31 @@
     <Image Include="Assets\LockScreenLogo.scale-200.png" />
     <Image Include="Assets\SplashScreen.scale-200.png" />
     <Image Include="Assets\Square150x150Logo.scale-200.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Image Include="Assets\Square44x44Logo.scale-100.png" />
+    <Image Include="Assets\Square44x44Logo.scale-125.png" />
+    <Image Include="Assets\Square44x44Logo.scale-150.png" />
     <Image Include="Assets\Square44x44Logo.scale-200.png" />
+    <Image Include="Assets\Square44x44Logo.scale-400.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-24.png" />
     <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Image Include="Assets\StoreLogo.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Image Include="Assets\StoreLogo.scale-100.png" />
+    <Image Include="Assets\StoreLogo.scale-125.png" />
+    <Image Include="Assets\StoreLogo.scale-150.png" />
+    <Image Include="Assets\StoreLogo.scale-200.png" />
+    <Image Include="Assets\StoreLogo.scale-400.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +184,7 @@
   <ItemGroup>
     <None Include="certificate.pfx" />
     <None Include="newDesktopRn_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="PropertySheet.props" />
     <Text Include="readme.txt">
       <DeploymentContent>false</DeploymentContent>
@@ -195,6 +219,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ReactNativeWindowsTargets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
   </ImportGroup>
   <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -202,5 +227,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props'))" />
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets'))" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
   </Target>
 </Project>
