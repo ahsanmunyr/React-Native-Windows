@@ -65,6 +65,7 @@ void App::OnLaunched(activation::LaunchActivatedEventArgs const& e)
 }
 
 
+
 /// <summary>
 /// Invoked when the application is activated by some means other than normal launching.
 /// </summary>

@@ -1,7 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- This project was created with react-native-windows 0.72.20 -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This project was created with react-native-windows 0.72.21 -->
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props')" />
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
@@ -61,8 +60,7 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -72,18 +70,7 @@
   <ImportGroup Label="ReactNativeWindowsPropertySheets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\external\Microsoft.ReactNative.Uwp.CppApp.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props')" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros">
-    <PackageCertificateThumbprint>12C9D980BDAA589B95F36DFC0040664E623191A3</PackageCertificateThumbprint>
-    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
-    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
-    <AppInstallerUri>https://ahsanmuneer.vercel.app/</AppInstallerUri>
-    <HoursBetweenUpdateChecks>24</HoursBetweenUpdateChecks>
-  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -130,31 +117,9 @@
     <Image Include="Assets\LockScreenLogo.scale-200.png" />
     <Image Include="Assets\SplashScreen.scale-200.png" />
     <Image Include="Assets\Square150x150Logo.scale-200.png" />
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
-    <Image Include="Assets\Square44x44Logo.scale-100.png" />
-    <Image Include="Assets\Square44x44Logo.scale-125.png" />
-    <Image Include="Assets\Square44x44Logo.scale-150.png" />
     <Image Include="Assets\Square44x44Logo.scale-200.png" />
-    <Image Include="Assets\Square44x44Logo.scale-400.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-16.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-24.png" />
     <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-256.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-32.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-48.png" />
-    <Image Include="Assets\StoreLogo.scale-100.png" />
-    <Image Include="Assets\StoreLogo.scale-125.png" />
-    <Image Include="Assets\StoreLogo.scale-150.png" />
-    <Image Include="Assets\StoreLogo.scale-200.png" />
-    <Image Include="Assets\StoreLogo.scale-400.png" />
+    <Image Include="Assets\StoreLogo.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +147,6 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="certificate.pfx" />
-    <None Include="newDesktopRn_TemporaryKey.pfx" />
-    <None Include="packages.config" />
     <None Include="PropertySheet.props" />
     <Text Include="readme.txt">
       <DeploymentContent>false</DeploymentContent>
@@ -196,30 +158,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="Assets\AntDesign.ttf" />
-    <Font Include="Assets\Entypo.ttf" />
-    <Font Include="Assets\EvilIcons.ttf" />
-    <Font Include="Assets\Feather.ttf" />
-    <Font Include="Assets\FontAwesome.ttf" />
-    <Font Include="Assets\FontAwesome5_Brands.ttf" />
-    <Font Include="Assets\FontAwesome5_Regular.ttf" />
-    <Font Include="Assets\FontAwesome5_Solid.ttf" />
-    <Font Include="Assets\FontAwesome6_Brands.ttf" />
-    <Font Include="Assets\FontAwesome6_Regular.ttf" />
-    <Font Include="Assets\FontAwesome6_Solid.ttf" />
-    <Font Include="Assets\Fontisto.ttf" />
-    <Font Include="Assets\Foundation.ttf" />
-    <Font Include="Assets\Ionicons.ttf" />
-    <Font Include="Assets\MaterialCommunityIcons.ttf" />
-    <Font Include="Assets\MaterialIcons.ttf" />
-    <Font Include="Assets\Octicons.ttf" />
-    <Font Include="Assets\SimpleLineIcons.ttf" />
-    <Font Include="Assets\Zocial.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ReactNativeWindowsTargets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets')" />
-    <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
   </ImportGroup>
   <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -227,12 +169,5 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props'))" />
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets'))" />
-  </Target>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.230706.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
   </Target>
 </Project>

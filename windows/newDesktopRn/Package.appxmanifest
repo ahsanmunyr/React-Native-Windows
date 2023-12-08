@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="a0a59417-d17c-42c4-b408-f2cce5b8f0f5"
+    Name="cc66d0aa-dd0c-42fe-9c23-84564cbbf42f"
     Publisher="CN=Home"
-    Version="1.0.1.0" />
+    Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="a0a59417-d17c-42c4-b408-f2cce5b8f0f5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="cc66d0aa-dd0c-42fe-9c23-84564cbbf42f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>First-Desktop-App</DisplayName>
+    <DisplayName>newDesktopRn</DisplayName>
     <PublisherDisplayName>Home</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -33,16 +33,13 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="newDesktopRn.App">
       <uap:VisualElements
-        DisplayName="First Desktop App"
-        Description="Testing POS APIs"
-        BackgroundColor="transparent" Square150x150Logo="Assets\Wide310x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="RN-App">
-          <uap:ShowNameOnTiles>
-            <uap:ShowOn Tile="square150x150Logo"/>
-          </uap:ShowNameOnTiles>
-        </uap:DefaultTile >
-        <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="white"/>
-        <uap:LockScreen BadgeLogo="Assets\celebration.png" Notification="badge"/>
+        DisplayName="newDesktopRn"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="newDesktopRn"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>

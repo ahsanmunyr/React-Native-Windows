@@ -23,6 +23,9 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
     <Image Include="Assets\Square150x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
@@ -38,75 +41,6 @@
     <Image Include="Assets\LockScreenLogo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\StoreLogo.scale-100.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\StoreLogo.scale-125.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\StoreLogo.scale-150.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\StoreLogo.scale-200.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\StoreLogo.scale-400.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.scale-100.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.scale-125.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.scale-150.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.scale-400.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-16.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-24.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-32.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-48.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-256.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
-      <Filter>Assets</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -118,73 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
-    <None Include="newDesktopRn_TemporaryKey.pfx" />
-    <None Include="certificate.pfx" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="Assets\AntDesign.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Entypo.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\EvilIcons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Feather.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome5_Brands.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome5_Regular.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome5_Solid.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome6_Brands.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome6_Regular.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\FontAwesome6_Solid.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Fontisto.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Foundation.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Ionicons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\MaterialCommunityIcons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\MaterialIcons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Octicons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\Zocial.ttf">
-      <Filter>Assets</Filter>
-    </Font>
-    <Font Include="Assets\SimpleLineIcons.ttf">
-      <Filter>Assets</Filter>
-    </Font>
   </ItemGroup>
 </Project>
