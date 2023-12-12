@@ -1,12 +1,18 @@
 import {View, Text, useWindowDimensions, FlatList} from 'react-native';
-import React, {memo, useMemo, useCallback, useState} from 'react';
+import React, {memo, useMemo, useCallback, useState, useEffect} from 'react';
 import Header from '../../components/Header';
 import {COLORS} from '../../constant/theme';
 import {StyleSheet} from 'react-native-windows';
 import Items from './ListingComponents/Items';
 import {productArray} from '../../constant/data';
+import { connect } from 'react-redux';
+import categoryRed from '../../store/reducer/categoryRed';
+import * as categoryAct from '../../store/actions/categoriesAct';
+import otpRed from '../../store/reducer/otpRed';
+import Loading from '../../components/Loading';
 
-const HomeScreen = ({TabBarWidth}) => {
+const HomeScreen = ({TabBarWidth, categoryRed, categoryAct, otpRed}) => {
+  console.log(categoryRed, "categoryRed")
   const {width, height} = useWindowDimensions();
   const [fields, setFields] = useState({
     products: {},
@@ -18,7 +24,23 @@ const HomeScreen = ({TabBarWidth}) => {
     [fields],
   );
 
+  const getVal = useCallback(() => {
+  
+    categoryAct(otpRed['PlaceId'], otpRed?.UserData['Token']).then((res) => {
+      console.log(res, "=================")
+    });
+  });
+  
+  useEffect(() => {
+    getVal();
+  }, []);
+  
+
+  
+  
   const productID = useMemo(() => fields['products'], [fields]);
+
+
   return (
     <View
       style={[
@@ -32,7 +54,7 @@ const HomeScreen = ({TabBarWidth}) => {
         <View style={styles.leftContainer}></View>
         <View style={styles.rightContainer}>
           <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-            {productArray.map((item, index) => {
+            {categoryRed?.FoodCategories?.map((item, index) => {
               return (
                 <Items
                   index={index}
@@ -64,7 +86,15 @@ const HomeScreen = ({TabBarWidth}) => {
   );
 };
 
-export default memo(HomeScreen);
+
+function mapStateToProps({categoryRed,otpRed}){
+  return{
+    categoryRed,otpRed
+  }
+}
+
+export default connect(mapStateToProps,categoryAct)(memo(HomeScreen))
+
 
 const styles = StyleSheet.create({
   main: {

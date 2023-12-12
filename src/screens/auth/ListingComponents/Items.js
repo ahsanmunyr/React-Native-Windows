@@ -4,6 +4,7 @@ import {COLORS} from '../../../constant/theme';
 import {Pressable} from 'react-native-windows';
 
 const Items = ({index, item, setProducts, products}) => {
+  console.log(item, "item")
   return (
     <Pressable onPress={() => setProducts('products', item)}>
       <View
@@ -13,7 +14,7 @@ const Items = ({index, item, setProducts, products}) => {
           paddingVertical: 2,
           borderWidth: 1,
           borderColor: COLORS.primary,
-          backgroundColor: products.id == item.id ? '#f0f0f0' : 'white',
+          backgroundColor: products.CategoryId == item.CategoryId          ? '#f0f0f0' : 'white',
         }}>
         <Text
           style={{
@@ -21,7 +22,7 @@ const Items = ({index, item, setProducts, products}) => {
             color: 'gray',
             fontWeight: '600',
           }}>
-          {item.name}
+          {item.CategoryName}
         </Text>
       </View>
     </Pressable>

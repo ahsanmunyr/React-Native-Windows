@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
   Button,
-  Pressable,
+  Pressable,Text,TextInput
 } from 'react-native';
 import React, {useState, useMemo, useCallback, memo, useEffect} from 'react';
 import {
@@ -17,7 +17,7 @@ import {
   useResponsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {Revaki_logo} from '../../constant/images';
-import {TextInput, Text} from 'react-native-windows';
+// import {TextInput, Text} from 'react-native-windows';
 import Heading from '../../components/Text/Heading';
 import ButtonWithHoverEffect from '../../components/WindowsBtn/ButtonWithHoverEffect';
 import {screenNavigation} from '../../helper/helper';

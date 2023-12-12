@@ -6,11 +6,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import loginRed from './reducer/loginRed';
 import otpRed from './reducer/otpRed';
 import userDataRed from './reducer/userDataRed';
+import categoryRed from './reducer/categoryRed';
+
 const reducers = combineReducers({
   drawableWidthRed,
   loginRed,
   otpRed,
   userDataRed,
+  categoryRed
 });
 
 const persistConfig = {

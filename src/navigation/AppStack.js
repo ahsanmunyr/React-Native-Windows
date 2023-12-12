@@ -50,7 +50,6 @@ const AppStack = ({data}) => {
   //   return <Loading main={true} />;
   // }
 
-  
   if (data['Status']) {
     return (
       <Stack.Navigator initialRouteName={'SideTabBar'}>
@@ -59,7 +58,11 @@ const AppStack = ({data}) => {
     );
   } else {
     return (
-      <Stack.Navigator initialRouteName={'LoginScreen'}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName={'WalkthroughScreen'}>
         <Stack.Screen name="WalkthroughScreen" component={WalkthroughScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="OTPScreen" component={OTPScreen} />
