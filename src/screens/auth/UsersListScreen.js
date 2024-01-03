@@ -23,7 +23,7 @@ const UsersListScreen = ({TabBarWidth, userDataAct, otpRed, userDataRed}) => {
   });
 
   useEffect(() => {
-    getVal();
+    // getVal();
     // console.log(otpRed, 'otpRed');
   }, []);
 
@@ -45,7 +45,7 @@ const UsersListScreen = ({TabBarWidth, userDataAct, otpRed, userDataRed}) => {
         alignSelf: 'flex-end',
       }}>
       <Header width={width - TabBarWidth} title={'Users'} />
-      <FlatList
+      {/* <FlatList
         data={userDataRed['UserList']}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => (
@@ -53,7 +53,7 @@ const UsersListScreen = ({TabBarWidth, userDataAct, otpRed, userDataRed}) => {
         )}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-      />
+      /> */}
     </View>
   );
 };

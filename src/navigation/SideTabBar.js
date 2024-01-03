@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    borderColor: '#afa7fa',
+    borderColor: COLORS.primary,
     // opacity: 0.9,
     // height: genericRatio(60),
   },

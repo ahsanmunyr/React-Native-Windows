@@ -5,8 +5,8 @@ import {tab_icon, tab_icon_focus} from '../constant/icon';
 import {connect} from 'react-redux';
 import * as drawableWidthChange from '../store/actions/drawableBtnAct';
 import {Pressable} from 'react-native-windows';
+import { COLORS } from '../constant/theme';
 const Header = ({width, title, drawableWidthChange, drawableWidthRed}) => {
-  // console.log(drawableWidthRed.width, 'ASDASDASD');
 
   return (
     <View
@@ -18,7 +18,7 @@ const Header = ({width, title, drawableWidthChange, drawableWidthRed}) => {
         alignItems: 'center',
         paddingHorizontal: 12,
         borderBottomWidth: 2,
-        borderColor: '#afa7fa',
+        borderColor: COLORS.primary,
         flexDirection: 'row',
       }}>
       <View
@@ -40,7 +40,7 @@ const Header = ({width, title, drawableWidthChange, drawableWidthRed}) => {
             alignItems: 'center',
             width: 40,
             height: 40,
-            backgroundColor: '#afa7fa',
+            backgroundColor: COLORS.primary,
             borderRadius: 100,
           }}>
           <Image source={tab_icon_focus.Menu} style={{width: 25, height: 25}} />
@@ -53,7 +53,7 @@ const Header = ({width, title, drawableWidthChange, drawableWidthRed}) => {
           {'   '} {title}
         </Text>
       </View>
-      <View style={{borderColor: '#afa7fa', borderWidth: 2}}>
+      <View style={{borderColor: COLORS.primary, borderWidth: 2}}>
         <SearchBoxWidget />
       </View>
     </View>

@@ -15,6 +15,9 @@
 // Includes from react-native-screens
 #include <winrt/RNScreens.h>
 
+// Includes from react-native-svg
+#include <winrt/RNSVG.h>
+
 // Includes from react-native-windows-hello
 #include <winrt/ReactNativeWindowsHello.h>
 
@@ -31,6 +34,8 @@ void RegisterAutolinkedNativeModulePackages(winrt::Windows::Foundation::Collecti
     packageProviders.Append(winrt::ReactNativePicker::ReactPackageProvider());
     // IReactPackageProviders from react-native-screens
     packageProviders.Append(winrt::RNScreens::ReactPackageProvider());
+    // IReactPackageProviders from react-native-svg
+    packageProviders.Append(winrt::RNSVG::ReactPackageProvider());
     // IReactPackageProviders from react-native-windows-hello
     packageProviders.Append(winrt::ReactNativeWindowsHello::ReactPackageProvider());
 }

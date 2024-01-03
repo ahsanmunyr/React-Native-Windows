@@ -27,7 +27,7 @@ const {WalkthroughScreen, LoginScreen, OTPScreen} = NonAuthScreen;
 
 const Stack = createNativeStackNavigator();
 
-const AppStack = ({data}) => {
+const AppStack = ({data, otpRed}) => {
   // const [login, onChangeLogin] = useState(false);
   // const [loading, onChangeLoading] = useState(false);
   // async function getVal() {
@@ -49,6 +49,8 @@ const AppStack = ({data}) => {
   // if (loading) {
   //   return <Loading main={true} />;
   // }
+
+
 
   if (data['Status']) {
     return (

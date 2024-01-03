@@ -7,13 +7,14 @@ import loginRed from './reducer/loginRed';
 import otpRed from './reducer/otpRed';
 import userDataRed from './reducer/userDataRed';
 import categoryRed from './reducer/categoryRed';
-
+import dishListRed from './reducer/dishlistRed';
 const reducers = combineReducers({
   drawableWidthRed,
   loginRed,
   otpRed,
   userDataRed,
-  categoryRed
+  categoryRed,
+  dishListRed
 });
 
 const persistConfig = {
